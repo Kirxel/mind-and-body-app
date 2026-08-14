@@ -3,7 +3,6 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { SiteLoaderOverlay } from "@/components/site-loader-overlay";
 
 const bodyFont = Manrope({
   subsets: ["latin", "cyrillic"],
@@ -38,7 +37,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ru">
       <body className={`${bodyFont.variable} ${headingFont.variable}`}>
-        <SiteLoaderOverlay />
         <a href="#main-content" className="skip-link">
           Перейти к содержимому
         </a>

@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;
   min-height: 40rem;
+  margin-top: 1.35rem;
   padding: clamp(2rem, 5vw, 3rem);
   border-radius: calc(var(--radius-lg) + 0.5rem);
   display: grid;
@@ -17,6 +18,8 @@
     linear-gradient(180deg, rgba(34, 22, 16, 0.24), rgba(34, 22, 16, 0.58)),
     linear-gradient(90deg, rgba(34, 22, 16, 0.72), rgba(34, 22, 16, 0.24) 56%, rgba(34, 22, 16, 0.4)),
     url("/images/space/main-lobby.jpg") center/cover no-repeat;
+  transform: scale(1.08);
+  transform-origin: center;
 }
 
 .heroBackground::after {
@@ -103,9 +106,16 @@
 }
 
 .primaryAction {
-  background: var(--brand-brown);
-  color: white;
-  box-shadow: 0 14px 30px rgba(64, 45, 33, 0.18);
+  background: linear-gradient(180deg, rgba(255, 247, 241, 0.98), rgba(244, 229, 214, 0.96));
+  color: var(--brand-brown);
+  border: 1px solid rgba(255, 247, 241, 0.72);
+  box-shadow:
+    0 16px 34px rgba(20, 12, 8, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+
+.primaryAction:hover {
+  background: linear-gradient(180deg, rgba(255, 250, 246, 1), rgba(247, 234, 221, 0.98));
 }
 
 .secondaryAction {
@@ -125,8 +135,7 @@
   gap: 1.5rem;
 }
 
-.philosophyCard,
-.spaceCard {
+.philosophyCard {
   padding: 1.6rem;
 }
 
@@ -143,12 +152,6 @@
 .philosophyCard p {
   color: var(--foreground-muted);
   line-height: 1.7;
-}
-
-.spaceGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
 }
 
 .spaceLayout {
@@ -174,30 +177,6 @@
 .ownerCopy p {
   color: var(--foreground-muted);
   line-height: 1.75;
-}
-
-.spaceCard {
-  position: relative;
-  overflow: hidden;
-  min-height: 15rem;
-  padding: 0;
-  background: rgba(234, 219, 203, 0.56);
-}
-
-.spaceCardWide {
-  grid-column: span 2;
-  min-height: 18rem;
-}
-
-.spaceImage {
-  object-fit: cover;
-}
-
-.spaceCard::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(34, 22, 16, 0.04), rgba(34, 22, 16, 0.16));
 }
 
 .ownerSection {
@@ -383,13 +362,20 @@
     grid-template-columns: 1fr;
   }
 
-  .spaceGrid {
-    grid-template-columns: 1fr;
-  }
-
   .hero {
     min-height: 34rem;
     align-items: end;
+    border-radius: calc(var(--radius-lg) + 0.25rem);
+    margin-top: 1rem;
+  }
+
+  .heroBackground {
+    background-position: 62% center;
+    transform: scale(0.94);
+    background:
+      linear-gradient(180deg, rgba(34, 22, 16, 0.16), rgba(34, 22, 16, 0.42)),
+      linear-gradient(90deg, rgba(34, 22, 16, 0.56), rgba(34, 22, 16, 0.18) 56%, rgba(34, 22, 16, 0.28)),
+      url("/images/space/main-lobby.jpg") 62% center / cover no-repeat;
   }
 
   .ownerIntro {
@@ -399,10 +385,43 @@
   .ownerPortrait {
     min-height: 23rem;
   }
+}
 
-  .spaceCardWide {
-    grid-column: span 1;
-    min-height: 16rem;
+@media (max-width: 600px) {
+  .hero {
+    width: calc(100vw - 0.5rem);
+    max-width: none;
+    margin-top: 0.85rem;
+    margin-left: calc(50% - 50vw + 0.25rem);
+    margin-right: calc(50% - 50vw + 0.25rem);
+    border-radius: 1.75rem;
+    padding: 1.6rem 1.2rem 1.35rem;
+  }
+
+  .heroCopy {
+    max-width: none;
+    gap: 1.15rem;
+    padding: 0.55rem 0 0 0.2rem;
+  }
+
+  .heroTitle {
+    max-width: none;
+    font-size: clamp(2.15rem, 9vw, 3rem);
+    letter-spacing: -0.05em;
+    white-space: nowrap;
+  }
+
+  .hero :global(.lead) {
+    max-width: 100%;
+  }
+
+  .heroBackground {
+    border-radius: inherit;
+    background:
+      linear-gradient(180deg, rgba(34, 22, 16, 0.16), rgba(34, 22, 16, 0.42)),
+      linear-gradient(90deg, rgba(34, 22, 16, 0.52), rgba(34, 22, 16, 0.14) 58%, rgba(34, 22, 16, 0.24)),
+      url("/images/space/main-lobby.jpg") 64% center / cover no-repeat;
+    transform: scale(0.92);
   }
 }
 

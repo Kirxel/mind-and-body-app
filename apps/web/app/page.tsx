@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { SectionShell } from "@/components/section-shell";
 import { ServiceCard } from "@/components/service-card";
-import { contactDetails, services } from "@/lib/site-content";
+import { SpaceSlider } from "@/components/space-slider";
+import { brandImages, contactDetails, services } from "@/lib/site-content";
 import styles from "./page.module.css";
 
 export default function HomePage() {
@@ -141,44 +142,13 @@ export default function HomePage() {
               ощущение и важно сохранить дальше в каждом блоке и каждом переходе.
             </p>
           </article>
-          <div className={styles.spaceGrid}>
-            <article className={`card ${styles.spaceCard} ${styles.spaceCardWide}`}>
-              <Image
-                src="/images/space/main-lobby.jpg"
-                alt="Входная зона пространства «Разум и Тело»"
-                fill
-                sizes="(max-width: 900px) 100vw, 66vw"
-                className={styles.spaceImage}
-              />
-            </article>
-            <article className={`card ${styles.spaceCard}`}>
-              <Image
-                src="/images/space/location-1.jpg"
-                alt="Кабинет с тёплым светом и фирменной фразой пространства"
-                fill
-                sizes="(max-width: 900px) 100vw, 33vw"
-                className={styles.spaceImage}
-              />
-            </article>
-            <article className={`card ${styles.spaceCard}`}>
-              <Image
-                src="/images/space/location-2.jpg"
-                alt="Массажный кабинет пространства «Разум и Тело»"
-                fill
-                sizes="(max-width: 900px) 100vw, 33vw"
-                className={styles.spaceImage}
-              />
-            </article>
-            <article className={`card ${styles.spaceCard}`}>
-              <Image
-                src="/images/space/location-3.jpg"
-                alt="Интерьер кабинета с тёплыми материалами и мягкой геометрией"
-                fill
-                sizes="(max-width: 900px) 100vw, 33vw"
-                className={styles.spaceImage}
-              />
-            </article>
-          </div>
+          <SpaceSlider
+            images={[
+              brandImages.spaceLobby,
+              brandImages.spaceRoomOne,
+              brandImages.spaceRoomThree
+            ]}
+          />
         </div>
       </SectionShell>
 

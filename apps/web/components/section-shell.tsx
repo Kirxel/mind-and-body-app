@@ -20,4 +20,3 @@ export function SectionShell({ eyebrow, title, description, children }: SectionS
     </section>
   );
 }
-

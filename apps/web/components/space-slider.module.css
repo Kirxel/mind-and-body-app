@@ -1,0 +1,135 @@
+.slider {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.viewport {
+  position: relative;
+  overflow: hidden;
+  min-height: 34rem;
+  border-radius: calc(var(--radius-lg) - 0.1rem);
+  background:
+    radial-gradient(circle at top, rgba(255, 250, 248, 0.3), transparent 28%),
+    rgba(234, 219, 203, 0.8);
+  border: 1px solid rgba(64, 45, 33, 0.1);
+  box-shadow: var(--shadow);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: none;
+  transition: opacity 800ms ease;
+  pointer-events: none;
+}
+
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(34, 22, 16, 0.08), rgba(34, 22, 16, 0.16)),
+    radial-gradient(circle at center, transparent 30%, rgba(34, 22, 16, 0.12) 100%);
+}
+
+.slideActive {
+  opacity: 1;
+}
+
+.backdrop {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.08);
+  filter: blur(18px) saturate(0.92);
+  opacity: 0.72;
+}
+
+.imageShell {
+  position: absolute;
+  inset: 1.25rem;
+  overflow: hidden;
+  border-radius: calc(var(--radius-lg) - 0.45rem);
+  background: rgba(255, 250, 246, 0.16);
+  box-shadow:
+    0 18px 40px rgba(52, 36, 27, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.image {
+  object-fit: contain;
+  object-position: center center;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.caption {
+  margin: 0;
+  color: var(--foreground-muted);
+  line-height: 1.65;
+  max-width: 40rem;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(64, 45, 33, 0.18);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    width 180ms ease;
+  cursor: pointer;
+}
+
+.dotActive {
+  width: 1.8rem;
+  background: var(--brand-brown);
+}
+
+.dot:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .viewport {
+    min-height: 27rem;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .imageShell {
+    inset: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .viewport {
+    min-height: 23rem;
+  }
+
+  .caption {
+    font-size: 0.95rem;
+  }
+
+  .imageShell {
+    inset: 0.75rem;
+    border-radius: 1.25rem;
+  }
+}
