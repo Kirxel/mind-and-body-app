@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { SectionShell } from "@/components/section-shell";
 import styles from "./page.module.css";
 
@@ -29,17 +30,26 @@ export default function AboutPage() {
           </article>
 
           <article className={`card ${styles.heroAside}`}>
-            <div>
+            <div className={styles.heroAsideImageWrap}>
+              <Image
+                src="/images/space/main-lobby.jpg"
+                alt="Входная зона пространства «Разум и Тело»"
+                fill
+                sizes="(max-width: 980px) 100vw, 30vw"
+                className={styles.heroAsideImage}
+              />
+            </div>
+            <div className={styles.heroAsideCopy}>
               <p className={styles.asideLabel}>Основа подхода</p>
               <p>
                 Через пространство, ритм и контакт здесь создаётся ощущение собранности, в котором
                 проще услышать себя и выбрать подходящий формат взаимодействия.
               </p>
+              <p>
+                Сайт продолжает ту же идею: мягко знакомит с направлением, атмосферой и людьми, не
+                перегружая человека лишним.
+              </p>
             </div>
-            <p>
-              Сайт продолжает ту же идею: мягко знакомит с направлением, атмосферой и людьми, не
-              перегружая человека лишним.
-            </p>
           </article>
         </div>
 
@@ -71,11 +81,34 @@ export default function AboutPage() {
             </ul>
           </article>
 
+          <article className={`card ${styles.galleryCard}`}>
+            <div className={styles.galleryStack}>
+              <div className={styles.galleryImageTall}>
+                <Image
+                  src="/images/space/location-1.jpg"
+                  alt="Кабинет пространства «Разум и Тело» с мягким светом"
+                  fill
+                  sizes="(max-width: 980px) 100vw, 26vw"
+                  className={styles.galleryImage}
+                />
+              </div>
+              <div className={styles.galleryImageWide}>
+                <Image
+                  src="/images/space/location-3.jpg"
+                  alt="Интерьер кабинета с деревянными поверхностями и тёплой атмосферой"
+                  fill
+                  sizes="(max-width: 980px) 100vw, 26vw"
+                  className={styles.galleryImage}
+                />
+              </div>
+            </div>
+          </article>
+
           <article className={`card ${styles.noteCard}`}>
-            <h2>Что будет усиливаться дальше</h2>
+            <h2>Пространство сразу задаёт нужный ритм</h2>
             <p>
-              По мере наполнения сайта здесь появятся утверждённые фотографии пространства, материалы о
-              специалистах и более точные живые акценты бренда.
+              Свет, материалы, тишина и свободная композиция помогают мягко переключиться из городского
+              темпа в более спокойное и собранное состояние.
             </p>
           </article>
         </div>

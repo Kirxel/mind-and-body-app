@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SectionShell } from "@/components/section-shell";
 import { contactDetails } from "@/lib/site-content";
@@ -18,31 +19,42 @@ export default function ContactsPage() {
     >
       <div className={styles.layout}>
         <article className={`card ${styles.introCard}`}>
-          <div className={styles.introCopy}>
-            <p className={styles.introLabel}>Быстрый ориентир</p>
-            <h2>Если откликается атмосфера, дальше всё просто</h2>
-            <p>
-              Можно сразу перейти к записи, а можно сначала написать в Telegram или позвонить, если
-              хочется уточнить детали, формат визита или удобное время.
-            </p>
+          <div className={styles.introVisual}>
+            <Image
+              src="/images/space/location-2.jpg"
+              alt="Интерьер пространства «Разум и Тело»"
+              fill
+              sizes="(max-width: 980px) 100vw, 34vw"
+              className={styles.introImage}
+            />
           </div>
-          <div className={styles.quickActions}>
-            <Link
-              href={contactDetails.bookingUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="booking-cta booking-cta--primary"
-            >
-              Записаться
-            </Link>
-            <Link
-              href={contactDetails.telegram}
-              target="_blank"
-              rel="noreferrer"
-              className="booking-cta booking-cta--secondary"
-            >
-              Написать в Telegram
-            </Link>
+          <div className={styles.introContent}>
+            <div className={styles.introCopy}>
+              <p className={styles.introLabel}>Быстрый ориентир</p>
+              <h2>Если откликается атмосфера, дальше всё просто</h2>
+              <p>
+                Можно сразу перейти к записи, а можно сначала написать в Telegram или позвонить, если
+                хочется уточнить детали, формат визита или удобное время.
+              </p>
+            </div>
+            <div className={styles.quickActions}>
+              <Link
+                href={contactDetails.bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="booking-cta booking-cta--primary"
+              >
+                Записаться
+              </Link>
+              <Link
+                href={contactDetails.telegram}
+                target="_blank"
+                rel="noreferrer"
+                className="booking-cta booking-cta--secondary"
+              >
+                Написать в Telegram
+              </Link>
+            </div>
           </div>
         </article>
 
@@ -96,18 +108,29 @@ export default function ContactsPage() {
         </div>
 
         <article className={`card ${styles.sourcesCard}`}>
-          <h2>Дополнительные карты</h2>
-          <p>Если привычнее пользоваться внешними сервисами, можно открыть пространство в удобной карте.</p>
-          <p>
-            <Link href={contactDetails.map2gis} target="_blank" rel="noreferrer">
-              Открыть в 2ГИС
-            </Link>
-          </p>
-          <p>
-            <Link href={contactDetails.mapYandex} target="_blank" rel="noreferrer">
-              Открыть карточку в Яндекс Картах
-            </Link>
-          </p>
+          <div className={styles.sourcesImageWrap}>
+            <Image
+              src="/images/space/main-lobby.jpg"
+              alt="Зона ресепшн пространства «Разум и Тело»"
+              fill
+              sizes="(max-width: 980px) 100vw, 40vw"
+              className={styles.sourcesImage}
+            />
+          </div>
+          <div className={styles.sourcesContent}>
+            <h2>Дополнительные карты</h2>
+            <p>Если привычнее пользоваться внешними сервисами, можно открыть пространство в удобной карте.</p>
+            <p>
+              <Link href={contactDetails.map2gis} target="_blank" rel="noreferrer">
+                Открыть в 2ГИС
+              </Link>
+            </p>
+            <p>
+              <Link href={contactDetails.mapYandex} target="_blank" rel="noreferrer">
+                Открыть карточку в Яндекс Картах
+              </Link>
+            </p>
+          </div>
         </article>
       </div>
     </SectionShell>

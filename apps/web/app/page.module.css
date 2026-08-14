@@ -16,7 +16,7 @@
   background:
     linear-gradient(180deg, rgba(34, 22, 16, 0.24), rgba(34, 22, 16, 0.58)),
     linear-gradient(90deg, rgba(34, 22, 16, 0.72), rgba(34, 22, 16, 0.24) 56%, rgba(34, 22, 16, 0.4)),
-    url("https://static.mastersapp.ru/media/cover/6a3909374d86d203540657f1.jpeg") center/cover no-repeat;
+    url("/images/space/main-lobby.jpg") center/cover no-repeat;
 }
 
 .heroBackground::after {
@@ -177,11 +177,27 @@
 }
 
 .spaceCard {
+  position: relative;
+  overflow: hidden;
   min-height: 15rem;
-  display: grid;
-  place-items: center;
-  color: var(--foreground-muted);
-  background: linear-gradient(180deg, rgba(234, 219, 203, 0.86), rgba(207, 181, 158, 0.44));
+  padding: 0;
+  background: rgba(234, 219, 203, 0.56);
+}
+
+.spaceCardWide {
+  grid-column: span 2;
+  min-height: 18rem;
+}
+
+.spaceImage {
+  object-fit: cover;
+}
+
+.spaceCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(34, 22, 16, 0.04), rgba(34, 22, 16, 0.16));
 }
 
 .ownerSection {
@@ -198,14 +214,26 @@
 }
 
 .ownerPortrait {
-  min-height: 21rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 28rem;
   border-radius: calc(var(--radius-md) - 0.25rem);
-  display: grid;
-  place-items: center;
-  color: rgba(255, 247, 241, 0.88);
   background:
-    linear-gradient(180deg, rgba(64, 45, 33, 0.12), rgba(64, 45, 33, 0.34)),
-    url("https://static.mastersapp.ru/media/avatar/6a391a5d4e2406af8709740b.jpg/400") center/cover no-repeat;
+    radial-gradient(circle at top, rgba(255, 250, 248, 0.72), transparent 34%),
+    linear-gradient(180deg, rgba(64, 45, 33, 0.05), rgba(64, 45, 33, 0.2));
+}
+
+.ownerPortrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(64, 45, 33, 0.03), rgba(64, 45, 33, 0.18));
+  pointer-events: none;
+}
+
+.ownerImage {
+  object-fit: cover;
+  object-position: center 18%;
 }
 
 .ownerCopy {
@@ -350,9 +378,12 @@
   .cardGrid,
   .philosophy,
   .ownerHighlights,
-  .spaceGrid,
   .contactGuidance,
   .mapSection {
+    grid-template-columns: 1fr;
+  }
+
+  .spaceGrid {
     grid-template-columns: 1fr;
   }
 
@@ -366,7 +397,12 @@
   }
 
   .ownerPortrait {
-    min-height: 17rem;
+    min-height: 23rem;
+  }
+
+  .spaceCardWide {
+    grid-column: span 1;
+    min-height: 16rem;
   }
 }
 

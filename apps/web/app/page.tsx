@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SectionShell } from "@/components/section-shell";
 import { ServiceCard } from "@/components/service-card";
@@ -78,8 +79,14 @@ export default function HomePage() {
       >
         <div className={styles.ownerSection}>
           <article className={`card ${styles.ownerIntro}`}>
-            <div className={styles.ownerPortrait} aria-hidden="true">
-              Фото Михаила
+            <div className={styles.ownerPortrait}>
+              <Image
+                src="/images/team/mikhail-main.jpg"
+                alt="Михаил в пространстве «Разум и Тело»"
+                fill
+                sizes="(max-width: 900px) 100vw, 32vw"
+                className={styles.ownerImage}
+              />
             </div>
             <div className={styles.ownerCopy}>
               <p className={styles.ownerEyebrow}>Владелец пространства</p>
@@ -135,9 +142,42 @@ export default function HomePage() {
             </p>
           </article>
           <div className={styles.spaceGrid}>
-            <div className={`card ${styles.spaceCard}`}>Фото пространства 1</div>
-            <div className={`card ${styles.spaceCard}`}>Фото пространства 2</div>
-            <div className={`card ${styles.spaceCard}`}>Деталь материалов / света</div>
+            <article className={`card ${styles.spaceCard} ${styles.spaceCardWide}`}>
+              <Image
+                src="/images/space/main-lobby.jpg"
+                alt="Входная зона пространства «Разум и Тело»"
+                fill
+                sizes="(max-width: 900px) 100vw, 66vw"
+                className={styles.spaceImage}
+              />
+            </article>
+            <article className={`card ${styles.spaceCard}`}>
+              <Image
+                src="/images/space/location-1.jpg"
+                alt="Кабинет с тёплым светом и фирменной фразой пространства"
+                fill
+                sizes="(max-width: 900px) 100vw, 33vw"
+                className={styles.spaceImage}
+              />
+            </article>
+            <article className={`card ${styles.spaceCard}`}>
+              <Image
+                src="/images/space/location-2.jpg"
+                alt="Массажный кабинет пространства «Разум и Тело»"
+                fill
+                sizes="(max-width: 900px) 100vw, 33vw"
+                className={styles.spaceImage}
+              />
+            </article>
+            <article className={`card ${styles.spaceCard}`}>
+              <Image
+                src="/images/space/location-3.jpg"
+                alt="Интерьер кабинета с тёплыми материалами и мягкой геометрией"
+                fill
+                sizes="(max-width: 900px) 100vw, 33vw"
+                className={styles.spaceImage}
+              />
+            </article>
           </div>
         </div>
       </SectionShell>

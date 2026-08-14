@@ -4,14 +4,37 @@
 }
 
 .introCard {
-  padding: 1.6rem 1.75rem;
+  overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) auto;
+  grid-template-columns: minmax(16rem, 0.9fr) minmax(0, 1.1fr);
   gap: 1rem;
   align-items: center;
   background:
     linear-gradient(140deg, rgba(221, 230, 237, 0.48), rgba(248, 234, 222, 0.8)),
     var(--surface);
+}
+
+.introVisual {
+  position: relative;
+  min-height: 100%;
+  align-self: stretch;
+}
+
+.introVisual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(34, 22, 16, 0.08), rgba(34, 22, 16, 0.2));
+}
+
+.introImage {
+  object-fit: cover;
+}
+
+.introContent {
+  padding: 1.6rem 1.75rem 1.6rem 0;
+  display: grid;
+  gap: 1rem;
 }
 
 .introCopy {
@@ -135,25 +158,58 @@
 }
 
 .sourcesCard {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.9fr) minmax(0, 1.1fr);
+  gap: 0;
+}
+
+.sourcesImageWrap {
+  position: relative;
+  min-height: 100%;
+}
+
+.sourcesImageWrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(34, 22, 16, 0.08), rgba(34, 22, 16, 0.2));
+}
+
+.sourcesImage {
+  object-fit: cover;
+}
+
+.sourcesContent {
   padding: 1.5rem;
   display: grid;
   gap: 0.75rem;
 }
 
-.sourcesCard h2,
-.sourcesCard p {
+.sourcesContent h2,
+.sourcesContent p {
   margin: 0;
 }
 
-.sourcesCard p {
+.sourcesContent p {
   color: var(--foreground-muted);
   line-height: 1.7;
 }
 
 @media (max-width: 980px) {
   .introCard,
+  .sourcesCard,
   .topRow {
     grid-template-columns: 1fr;
+  }
+
+  .introContent {
+    padding: 0 1.75rem 1.6rem;
+  }
+
+  .introVisual,
+  .sourcesImageWrap {
+    min-height: 16rem;
   }
 
   .quickActions {
