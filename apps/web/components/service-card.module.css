@@ -1,0 +1,50 @@
+.card {
+  padding: 1.6rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.symbol {
+  margin: 0;
+  color: var(--brand-brown-soft);
+  font-size: 1.4rem;
+}
+
+.title,
+.short,
+.summary {
+  margin: 0;
+}
+
+.title {
+  font-size: 1.4rem;
+}
+
+.short,
+.summary {
+  color: var(--foreground-muted);
+  line-height: 1.7;
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.tags li {
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(207, 181, 158, 0.34);
+  color: var(--brand-brown);
+  font-size: 0.9rem;
+}
+
+.link {
+  color: var(--brand-brown);
+  width: fit-content;
+  border-bottom: 1px solid rgba(64, 45, 33, 0.24);
+}

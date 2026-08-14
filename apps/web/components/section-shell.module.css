@@ -1,0 +1,10 @@
+.section {
+  display: grid;
+  gap: 2rem;
+}
+
+.header {
+  display: grid;
+  gap: 1rem;
+}
+

@@ -1,0 +1,90 @@
+.layout {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(18rem, 0.88fr);
+  gap: 1rem;
+}
+
+.intro {
+  padding: 1.75rem;
+  display: grid;
+  gap: 0.9rem;
+  background:
+    linear-gradient(180deg, rgba(221, 230, 237, 0.42), rgba(248, 234, 222, 0.78)),
+    var(--surface);
+}
+
+.intro h2,
+.intro p,
+.note h2,
+.note p {
+  margin: 0;
+}
+
+.intro p,
+.note p {
+  color: var(--foreground-muted);
+  line-height: 1.75;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.note {
+  padding: 1.6rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.sidebar {
+  padding: 1.6rem;
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+}
+
+.sidebar h2,
+.sidebar p {
+  margin: 0;
+}
+
+.sidebar p {
+  color: var(--foreground-muted);
+  line-height: 1.72;
+}
+
+.sidebarLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--foreground-muted);
+}
+
+.sidebarLabel::before {
+  content: "✦";
+  color: var(--brand-brown-soft);
+}
+
+.sidebarActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 980px) {
+  .top,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

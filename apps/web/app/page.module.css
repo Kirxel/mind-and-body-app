@@ -1,0 +1,377 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 40rem;
+  padding: clamp(2rem, 5vw, 3rem);
+  border-radius: calc(var(--radius-lg) + 0.5rem);
+  display: grid;
+  align-items: end;
+  isolation: isolate;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(180deg, rgba(34, 22, 16, 0.24), rgba(34, 22, 16, 0.58)),
+    linear-gradient(90deg, rgba(34, 22, 16, 0.72), rgba(34, 22, 16, 0.24) 56%, rgba(34, 22, 16, 0.4)),
+    url("https://static.mastersapp.ru/media/cover/6a3909374d86d203540657f1.jpeg") center/cover no-repeat;
+}
+
+.heroBackground::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(221, 230, 237, 0.12), transparent 24%),
+    radial-gradient(circle at 82% 22%, rgba(207, 181, 158, 0.16), transparent 28%);
+}
+
+.heroCopy {
+  max-width: 40rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: clamp(3.5rem, 8vw, 6.6rem);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+  max-width: 10ch;
+  color: #fff7f1;
+  text-wrap: balance;
+}
+
+.hero :global(.lead) {
+  color: rgba(255, 247, 241, 0.88);
+  max-width: 34rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.heroFacts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.heroFact {
+  padding: 1rem 1.15rem;
+  display: grid;
+  gap: 0.35rem;
+  background: rgba(34, 22, 16, 0.52);
+  border: 1px solid rgba(255, 247, 241, 0.16);
+  box-shadow:
+    0 10px 26px rgba(15, 8, 5, 0.18),
+    inset 0 1px 0 rgba(255, 247, 241, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.heroFact strong,
+.heroFact span {
+  margin: 0;
+}
+
+.heroFact strong {
+  color: #fff7f1;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.heroFact span {
+  color: rgba(255, 247, 241, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.primaryAction,
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0 1.25rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+.primaryAction {
+  background: var(--brand-brown);
+  color: white;
+  box-shadow: 0 14px 30px rgba(64, 45, 33, 0.18);
+}
+
+.secondaryAction {
+  border: 1px solid rgba(255, 247, 241, 0.24);
+  background: rgba(255, 247, 241, 0.12);
+  color: #fff7f1;
+  backdrop-filter: blur(8px);
+}
+
+.cardGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.philosophy {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.philosophyCard,
+.spaceCard {
+  padding: 1.6rem;
+}
+
+.philosophyCard h3,
+.philosophyCard p {
+  margin: 0;
+}
+
+.philosophyCard {
+  display: grid;
+  gap: 1rem;
+}
+
+.philosophyCard p {
+  color: var(--foreground-muted);
+  line-height: 1.7;
+}
+
+.spaceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.spaceLayout {
+  display: grid;
+  gap: 1rem;
+}
+
+.spaceNarrative {
+  padding: 1.6rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.spaceNarrative h3,
+.spaceNarrative p,
+.ownerHighlight h3,
+.ownerHighlight p {
+  margin: 0;
+}
+
+.spaceNarrative p,
+.ownerHighlight p,
+.ownerCopy p {
+  color: var(--foreground-muted);
+  line-height: 1.75;
+}
+
+.spaceCard {
+  min-height: 15rem;
+  display: grid;
+  place-items: center;
+  color: var(--foreground-muted);
+  background: linear-gradient(180deg, rgba(234, 219, 203, 0.86), rgba(207, 181, 158, 0.44));
+}
+
+.ownerSection {
+  display: grid;
+  gap: 1rem;
+}
+
+.ownerIntro {
+  padding: 1.6rem;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.78fr) minmax(0, 1.22fr);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.ownerPortrait {
+  min-height: 21rem;
+  border-radius: calc(var(--radius-md) - 0.25rem);
+  display: grid;
+  place-items: center;
+  color: rgba(255, 247, 241, 0.88);
+  background:
+    linear-gradient(180deg, rgba(64, 45, 33, 0.12), rgba(64, 45, 33, 0.34)),
+    url("https://static.mastersapp.ru/media/avatar/6a391a5d4e2406af8709740b.jpg/400") center/cover no-repeat;
+}
+
+.ownerCopy {
+  display: grid;
+  align-content: center;
+  gap: 0.95rem;
+}
+
+.ownerCopy h3,
+.ownerCopy p,
+.ownerHighlight h3,
+.ownerHighlight p {
+  margin: 0;
+}
+
+.ownerEyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.76rem;
+  color: var(--foreground-muted);
+}
+
+.ownerActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding-top: 0.25rem;
+}
+
+.ownerHighlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.ownerHighlight {
+  padding: 1.4rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.contactGuidance {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.contactCard {
+  padding: 1.6rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.contactCard h3,
+.contactCard p {
+  margin: 0;
+}
+
+.contactCard p {
+  color: var(--foreground-muted);
+  line-height: 1.75;
+}
+
+.inlineAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0 1rem;
+  width: fit-content;
+  border-radius: 999px;
+  background: rgba(64, 45, 33, 0.08);
+  color: var(--brand-brown);
+  border: 1px solid rgba(64, 45, 33, 0.12);
+}
+
+.mapSection {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.mapInfoCard,
+.mapCard {
+  padding: 1.6rem;
+  display: grid;
+  gap: 0.95rem;
+}
+
+.mapInfoCard h3,
+.mapInfoCard p,
+.mapCard p {
+  margin: 0;
+}
+
+.mapInfoCard p,
+.mapCard p {
+  color: var(--foreground-muted);
+  line-height: 1.75;
+}
+
+.mapActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.mapPrimary,
+.mapSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.mapPrimary {
+  background: var(--brand-brown);
+  color: white;
+}
+
+.mapSecondary {
+  border: 1px solid rgba(64, 45, 33, 0.16);
+  background: rgba(207, 181, 158, 0.22);
+  color: var(--brand-brown);
+}
+
+.mapFrame {
+  width: 100%;
+  min-height: 26rem;
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 0.4rem);
+  background: rgba(207, 181, 158, 0.22);
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .heroFacts,
+  .cardGrid,
+  .philosophy,
+  .ownerHighlights,
+  .spaceGrid,
+  .contactGuidance,
+  .mapSection {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 34rem;
+    align-items: end;
+  }
+
+  .ownerIntro {
+    grid-template-columns: 1fr;
+  }
+
+  .ownerPortrait {
+    min-height: 17rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .mapActions {
+    flex-direction: column;
+  }
+}

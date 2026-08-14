@@ -1,0 +1,35 @@
+.page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 1rem;
+}
+
+.article,
+.aside {
+  padding: 1.5rem;
+}
+
+.article ul,
+.aside ul {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--foreground-muted);
+  line-height: 1.8;
+}
+
+.priceHint {
+  margin: 1rem 0 0;
+  color: var(--foreground-muted);
+  line-height: 1.75;
+}
+
+@media (max-width: 860px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
