@@ -374,8 +374,8 @@
   }
 
   .heroBackground {
-    background-position: 62% center;
-    transform: scale(0.94);
+    background-position: 50% center;
+    transform: scale(0.5);
     background:
       linear-gradient(180deg, rgba(34, 22, 16, 0.16), rgba(34, 22, 16, 0.42)),
       linear-gradient(90deg, rgba(34, 22, 16, 0.56), rgba(34, 22, 16, 0.18) 56%, rgba(34, 22, 16, 0.28)),
@@ -436,6 +436,7 @@
 
   .heroFact:last-child {
     padding-bottom: 1.15rem;
+    margin-bottom: 1.15rem;
   }
 
   .heroBackground {
